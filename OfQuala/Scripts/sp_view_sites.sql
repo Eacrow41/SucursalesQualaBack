@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-create proc [dbo].[Sp_view_sites]
+CREATE proc [dbo].[Sp_view_sites]
 as
 select * from sucursales
 
