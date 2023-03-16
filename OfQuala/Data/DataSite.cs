@@ -27,7 +27,7 @@ namespace OfQuala.Data
                             msites.descripcion = (string)item["descripcion"];
                             msites.direccion = (string)item["direccion"];
                             msites.identificacion = (string)item["identificacion"];
-                            msites.fecha_Creacion = (DateTime)item["fecha_creacion"];
+                            msites.fecha_creacion = (DateTime)item["fecha_creacion"];
                             msites.moneda = (string)item["moneda"];
 
                             listProd.Add(msites);
@@ -58,7 +58,7 @@ namespace OfQuala.Data
                             msites.descripcion = (string)item["descripcion"];
                             msites.direccion = (string)item["direccion"];
                             msites.identificacion = (string)item["identificacion"];
-                            msites.fecha_Creacion = (DateTime)item["fecha_creacion"];
+                            msites.fecha_creacion = (DateTime)item["fecha_creacion"];
                             msites.moneda = (string)item["moneda"];
 
                             listProd.Add(msites);
@@ -81,7 +81,7 @@ namespace OfQuala.Data
                     cmd.Parameters.AddWithValue("@descripcion", param.descripcion);
                     cmd.Parameters.AddWithValue("@direccion", param.direccion); 
                     cmd.Parameters.AddWithValue("@identificacion", param.identificacion);
-                    cmd.Parameters.AddWithValue("@fecha_creacion", param.fecha_Creacion);
+                    cmd.Parameters.AddWithValue("@fecha_creacion", param.fecha_creacion);
                     cmd.Parameters.AddWithValue("@moneda", param.moneda);
 
                     await sql.OpenAsync();
@@ -101,7 +101,7 @@ namespace OfQuala.Data
                     cmd.Parameters.AddWithValue("@descripcion", param.descripcion);
                     cmd.Parameters.AddWithValue("@direccion", param.direccion);
                     cmd.Parameters.AddWithValue("@identificacion", param.identificacion);
-                    cmd.Parameters.AddWithValue("@fecha_creacion", param.fecha_Creacion);
+                    cmd.Parameters.AddWithValue("@fecha_creacion", param.fecha_creacion);
                     cmd.Parameters.AddWithValue("@moneda", param.moneda);
                     await sql.OpenAsync();
                     await cmd.ExecuteNonQueryAsync();

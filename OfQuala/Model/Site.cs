@@ -18,7 +18,7 @@ namespace OfQuala.Model
     [StringLength(250, ErrorMessage = "Cantidad maxima de caracteres permitidos es de 50")]
     public string identificacion { get; set; }
     
-    public DateTime fecha_Creacion { get; set; }
+    public DateTime fecha_creacion { get; set; }
 
     [Required(ErrorMessage = "Campo requerido.")]
     public string moneda { get; set; }
@@ -27,18 +27,19 @@ namespace OfQuala.Model
         {
             DateTime thisDay = DateTime.Today;
 
-            if (fecha_Creacion.Equals(""))
+
+            if (fecha_creacion.Equals(""))
             {
                 yield return new ValidationResult(
                     $"Campo requerido.",
-                    new[] { nameof(fecha_Creacion) });
+                    new[] { nameof(fecha_creacion) });
             }
             else {
-                if (fecha_Creacion < thisDay)
+                if (fecha_creacion < thisDay)
                 {
                     yield return new ValidationResult(
-                        $"El valor de fecha: {fecha_Creacion} es invalido, solo se permite el registro de la fecha actual o superior.",
-                        new[] { nameof(fecha_Creacion) });
+                        $"El valor de fecha: {fecha_creacion} es invalido, solo se permite el registro de la fecha actual o superior.",
+                        new[] { nameof(fecha_creacion) });
                 }
             }
 

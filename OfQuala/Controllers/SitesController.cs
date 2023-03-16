@@ -31,11 +31,11 @@ namespace OfQuala.Controllers
             var funcion = new Sites();
             var list = await funcion.ViewSiteId(parametros.codigo);
             if (list.Count() > 0) {
-                return BadRequest("El codigo ya esta registrado en la base de datos.");
+                return new JsonResult( new { success = true, message = "El codigo ya esta registrado en la base de datos.", StatusCode = 404 });
             } else
             {
                 await funcion.InsertSite(parametros);
-                return Ok();
+                return new JsonResult(new { success = true, message = "Sucursal creada con exito.", StatusCode = 200 });
             }
 
         }
@@ -46,7 +46,8 @@ namespace OfQuala.Controllers
             var funcion = new Sites();
             parametros.codigo = id;
             await funcion.EditSite(parametros);
-            return NoContent();
+            return new JsonResult(new { success = true, message = "Sucursal modificada con exito.", StatusCode = 200 });
+            //return Ok();
 
         }
 
@@ -55,7 +56,7 @@ namespace OfQuala.Controllers
         {
             var funcion = new Sites();
             await funcion.DeleteSite(id);
-            return NoContent();
+            return new JsonResult(new { success = true, message = "Sucursal eliminada con exito.", StatusCode = 200 });
 
         }
     }
